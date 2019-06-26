@@ -24,8 +24,8 @@ class PresentationBuilder:
     def __init__(self, input_name, output_name):
         self.input_file_name = input_name
         self.output_file_name = output_name
-        self.prs = pptx.Presentation('SFO PPT Hero Deck-4 (Arial).pptx')
-        self.layout = self.prs.slide_masters[0].slide_layouts[0]
+        self.prs = pptx.Presentation('SFO PPT Hero Deck-1 (Arial).pptx')
+        self.layout = self.prs.slide_masters[1].slide_layouts[16]
         self.person_list = []
 
     @property
@@ -44,7 +44,7 @@ class PresentationBuilder:
             sys.exit(1)
         f_in.readline()
         for aline in f_in:
-            line_list = aline.split(',')
+            line_list = aline.strip().split(',')
             self.person_list.append(Person(line_list[0], line_list[1], line_list[2], line_list[4]))
         f_in.close()
 
@@ -65,19 +65,26 @@ class PresentationBuilder:
     def add_slide(self, person):
         slide = self.prs.slides.add_slide(self.layout)
         # Adding name to slide in size 72 font
-        name_text_frame = slide.shapes[0].text_frame
+        name_text_frame = slide.shapes[1].text_frame
         name_text_frame.clear()
         p_name = name_text_frame.paragraphs[0]
         run_name = p_name.add_run()
-        run_name.text = person.first.upper() + ' ' + person.last.upper()
-        run_name.font.size = Pt(54)
+        run_name.text = person.first + ' ' + person.last
+        run_name.font.size = Pt(72)
         # Adding years to slide in size 54 font
-        year_text_frame = slide.shapes[1].text_frame
+        year_text_frame = slide.shapes[0].text_frame
         year_text_frame.clear()
         p_year = year_text_frame.paragraphs[0]
         run_year = p_year.add_run()
-        run_year.text = str(person.years) + ' YEARS AT SFO'
-        run_year.font.size = Pt(36)
+        run_year.text = str(person.years) + ' Years'
+        run_year.font.size = Pt(54)
+        # Adding Section to slide in size 54 font
+        section_text_frame = slide.shapes[2].text_frame
+        section_text_frame.clear()
+        p_sect = section_text_frame.paragraphs[0]
+        run_sect = p_sect.add_run()
+        run_sect.text = str(person.section)
+        run_sect.font.size = Pt(54)
 
     # This function takes a prs object, goes through every slide in it and deletes it
     # Presentation -> None
