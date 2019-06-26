@@ -45,7 +45,7 @@ class PresentationBuilder:
         f_in.readline()
         for aline in f_in:
             line_list = aline.split(',')
-            self.person_list.append(Person(line_list[0], line_list[1], line_list[2]), line_list[4])
+            self.person_list.append(Person(line_list[0], line_list[1], line_list[2], line_list[4]))
         f_in.close()
 
     # Takes in a list of Person objects and creates a powerpoint with each Person object occupying a new slide
