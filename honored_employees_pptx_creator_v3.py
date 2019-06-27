@@ -45,6 +45,7 @@ class PresentationBuilder:
             line_list = aline.strip().split(',')
             self.person_list.append(Person(line_list[0], line_list[1], line_list[2], line_list[4]))
         f_in.close()
+        self.person_list.sort(key=lambda r: r.section)
 
     # Takes in a list of Person objects and creates a powerpoint with each Person object occupying a new slide
     # List, str -> None
