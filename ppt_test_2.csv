@@ -1,10 +1,23 @@
-﻿First,Last,Years,Attending
-Marilyn,Monroe,36,YES
-Abraham,Lincoln,56,YES
-Mother,Teresa,87,YES
-John,Kennedy,46,YES
-Martin,King Jr.,39,YES
-Nelson,Mandela,95,YES
-Queen,Elizabeth II,93,YES
-Winston,Churchill,91,YES
-Bill,Gates,64,YES
+﻿First,Last,Years,Attending,Section
+Marilyn,Monroe,35,YES,ITT
+Abraham,Lincoln,55,YES,ITT
+Mother,Teresa,85,YES,PMO
+John,Kennedy,45,YES,PMO
+Martin,King Jr.,40,YES,ME
+Nelson,Mandela,95,YES,EE
+Queen,Elizabeth II,95,YES,ITT
+Winston,Churchill,90,YES,PMO
+Bill,Gates,65,YES,ITT
+Muhammad,Ali,65,YES,ME
+Mahatma,Gandhi,55,YES,EE
+Margaret,Thatcher,75,YES,HR
+Christopher,Columbus,35,YES,PMO
+Charles,Darwin,40,YES,ME
+Elvis,Presley,25,YES,EE
+Albert,Einstein,45,YES,ITT
+Paul,McCartney,50,YES,PMO
+Queen,Victoria,75,YES,PMO
+Pope,Francis,65,YES,PMO
+Leonardo,da Vinci,50,YES,ME
+Vincent,Van Gogh,35,YES,ITT
+Thomas,Edison,45,YES,ITT
