@@ -101,19 +101,14 @@ class PresentationBuilder:
         self.prs.part.drop_rel(id_dict[slide_id][1])
         del self.prs.slides._sldIdLst[id_dict[slide_id][0]]
 
-"""
+
 def main():
-    input_csv_file = 'ppt_test_1.csv'
-    output_pptx_file = 'ppt_test_1_v2.pptx'
-    prs = PresentationBuilder(input_csv_file, output_pptx_file)
+    file_arg = sys.argv[1:]
+    input_csv = file_arg[0]
+    output_pptx = file_arg[1]
+    prs = PresentationBuilder(input_csv, output_pptx)
     prs.create_person_list()
     prs.create_ppt()
-"""
-
-
-def main():
-    file_arg = sys.argv
-    print(file_arg)
 
 
 if __name__ == '__main__':
